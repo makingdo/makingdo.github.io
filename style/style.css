@@ -17,19 +17,42 @@
     color:black;
   }
 
-  button {
+  button,
+  input[type=submit] {
     background: #1A1A1A;
     border-radius: 50px;
     color:white;
-    padding: 0px 30px;
     border-color: #1A1A1A;
     display: flex;
     margin: auto;
     opacity: 0.9;
   }
 
-  button:hover {
+  button {
+    padding: 0px 30px;
+  }
+
+  input[type=submit]{
+    padding: 5px 30px;
+  }
+
+  button:hover,
+  input[type=submit]:hover {
     opacity: 1;
+  }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 1px solid black;
+    width:100%;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 1px solid black;
+    height:140px;
+    width:100%;
+    resize: none;
   }
 
   .image{
