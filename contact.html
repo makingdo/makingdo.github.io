@@ -60,16 +60,13 @@
             <div class="row content type-style-1">
                 <div class="col">
                     If you would like to contact us to use our prototypes for a project, a public talk, or just to find out more, do drop us a note below. 
-                    <form class="mt3" action=”mailto:claraonmars.sg@gmail.com”
-                    method=”POST”
-                    enctype=”multipart/form-data”
-                    name=”ContactUsForm”>
+                    <form id="form" class="mt3" onsubmit="return composeMail()" method="post" enctype="text/plain">
                         <label for="name"><strong>Name:</strong></label><br>
-                        <input type="text" id="name" name="name"><br>
+                        <input type="text" id="name" ><br>
                         <label for="email" class="mt2"><strong>Email:</strong></label><br>
-                        <input type="text" id="email" name="email"><br>
+                        <input type="text" id="email" ><br>
                         <label for="message" class="mt2"><strong>Message:</strong></label><br>
-                        <textarea  class="mb3" id="message" name="message"></textarea>
+                        <textarea id="textarea" class="mb3" id="message"></textarea>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
@@ -78,4 +75,25 @@
       </div>
       <footer class="footer"></footer>
 </body>
+<script>
+    var tx = document.getElementById('textarea');
+    tx.setAttribute('style', 'height:' + (tx.scrollHeight) + 'px;overflow-y:hidden;');
+    tx.addEventListener("input", OnInput, false);
+
+    function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+    }
+
+    let formAction = document.getElementById('form')
+
+    const composeMail = () => {
+        let mailto = 'mailto:claraonmars.sg@gmail.com?subject=Hello Speak Your Mind&body=Hi Speak Your Mind,%0D%0A%0D%0A'
+        let body = document.getElementById('message').value
+        body += "%0D%0A%0D%0A"
+        body += document.getElementById('name').value
+        mailto += body
+        formAction.setAttribute('action', mailto)
+    }
+</script>
 </html>

@@ -50,9 +50,7 @@
   textarea {
     border: none;
     border-bottom: 1px solid black;
-    height:140px;
     width:100%;
-    resize: none;
   }
 
   .image{
