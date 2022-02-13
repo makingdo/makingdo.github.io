@@ -58,6 +58,14 @@
     margin-top: 3rem;
   }
 
+  .image-link {
+    opacity: 0.9
+  }
+
+  .image-link:hover {
+    opacity: 1
+  }
+
   .link-reset {
     color:inherit;
   }
