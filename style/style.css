@@ -75,7 +75,7 @@
   }
 
   .content .visible-link{
-    display: inline-block;
+    display: inline;
     text-decoration: underline;
     line-height: 31.5px;
   }
@@ -178,11 +178,13 @@
     color: black;
   }
 
-  .type-style-1, .type-style-1 p {
-    font-size: 21px;
-    line-height: 31.5px;
-  }
-
   .footer {
     height: 160px;
+  }
+
+  @media (max-width: 640px) {
+    .content {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
